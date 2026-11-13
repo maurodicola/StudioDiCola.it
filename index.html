@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Legale Di Cola | Avv. Monica Di Cola</title>
+  <meta name="description" content="Studio legale dell’Avv. Monica Di Cola. Consulenza e assistenza in materia civile.">
+  <meta name="theme-color" content="#152b32">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23152b32'/%3E%3Cpath d='M17 18h30v5H17zm4 9h22v20H21z' fill='%23d8b77b'/%3E%3Cpath d='M27 31h10v12H27z' fill='%23152b32'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #152b32;
+      --ink-deep: #0d2026;
+      --paper: #f4f1e9;
+      --paper-light: #fbfaf6;
+      --gold: #bd9557;
+      --gold-soft: #dbc295;
+      --muted: #5f6c6e;
+      --line: rgba(21, 43, 50, .18);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper-light);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 100;
+      padding: .75rem 1rem;
+      background: white;
+      color: var(--ink);
+    }
+    .skip-link:focus { top: 1rem; }
+    .shell { width: min(1180px, calc(100% - 3rem)); margin: 0 auto; }
+
+    header {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 10;
+      color: white;
+    }
+    .nav {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      text-decoration: none;
+    }
+    .monogram {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(216,183,123,.8);
+      color: var(--gold-soft);
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      letter-spacing: .08em;
+    }
+    .brand-text { display: grid; line-height: 1.2; }
+    .brand-text strong {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.18rem;
+      letter-spacing: .01em;
+    }
+    .brand-text span {
+      margin-top: .2rem;
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.7);
+    }
+    nav { display: flex; align-items: center; gap: 2rem; }
+    nav a {
+      text-decoration: none;
+      font-size: .83rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    nav a:hover, nav a:focus-visible { color: var(--gold-soft); }
+    .nav-contact {
+      padding: .7rem 1rem;
+      border: 1px solid rgba(216,183,123,.65);
+    }
+
+    .hero {
+      min-height: 800px;
+      min-height: 92svh;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(189,149,87,.16), transparent 30%),
+        linear-gradient(112deg, rgba(8,28,34,.98) 0 52%, rgba(16,46,54,.94) 74%, rgba(9,30,36,.97) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 720px;
+      right: 8%;
+      top: 15%;
+      border: 1px solid rgba(216,183,123,.25);
+      transform: rotate(8deg);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 48%;
+      background: linear-gradient(transparent, rgba(216,183,123,.6), transparent);
+      right: 28%;
+      top: 25%;
+      transform: rotate(18deg);
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      min-height: 800px;
+      min-height: 92svh;
+      padding-top: 160px;
+      padding-bottom: 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+      gap: 6rem;
+      align-items: center;
+    }
+    .eyebrow {
+      margin: 0 0 1.4rem;
+      color: var(--gold-soft);
+      font-size: .76rem;
+      font-weight: 650;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+    h1 {
+      margin: 0;
+      max-width: 770px;
+      font-size: clamp(3.35rem, 7vw, 6.6rem);
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+    h1 em { color: var(--gold-soft); font-style: italic; font-weight: 400; }
+    .hero-lead {
+      max-width: 580px;
+      margin: 2rem 0 2.2rem;
+      color: rgba(255,255,255,.78);
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 1.7vw, 1.42rem);
+      line-height: 1.55;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      min-height: 50px;
+      padding: .8rem 1.2rem;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--ink-deep);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .button:hover, .button:focus-visible { background: #d1ad73; transform: translateY(-2px); }
+    .text-link {
+      color: rgba(255,255,255,.82);
+      text-underline-offset: .35rem;
+      text-decoration-color: rgba(216,183,123,.65);
+    }
+    .hero-note {
+      align-self: end;
+      padding: 1.6rem 0 1.6rem 1.7rem;
+      border-left: 1px solid var(--gold);
+      color: rgba(255,255,255,.7);
+      font-size: .92rem;
+      max-width: 290px;
+    }
+    .hero-note strong {
+      display: block;
+      margin-bottom: .45rem;
+      color: white;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+    }
+
+    .section { padding: clamp(5rem, 9vw, 9rem) 0; }
+    .intro {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: clamp(3rem, 8vw, 9rem);
+      align-items: start;
+    }
+    .section-number {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .section-number::before { content: ""; width: 48px; height: 1px; background: var(--gold); }
+    .intro h2, .services h2, .contact h2 {
+      margin: 0;
+      font-size: clamp(2.65rem, 5vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+    .intro-copy > p:first-child {
+      margin-top: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.4vw, 2.05rem);
+      line-height: 1.42;
+    }
+    .intro-copy p:last-child { max-width: 660px; color: var(--muted); }
+
+    .services {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .services-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .services-head p { max-width: 440px; margin: 0; color: var(--muted); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .card {
+      min-height: 315px;
+      padding: 2.2rem;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      transition: background .25s ease, transform .25s ease;
+    }
+    .card:hover { background: var(--paper-light); transform: translateY(-4px); }
+    .card-index { color: var(--gold); font-family: var(--serif); font-size: 1rem; }
+    .card h3 { margin: auto 0 1rem; font-size: clamp(1.65rem, 2.5vw, 2.25rem); line-height: 1.08; }
+    .card p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .method {
+      background: var(--ink);
+      color: white;
+    }
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: clamp(3rem, 8vw, 8rem);
+      align-items: center;
+    }
+    .quote-mark { color: var(--gold); font-family: var(--serif); font-size: 5rem; line-height: .5; }
+    blockquote {
+      margin: 2rem 0 0;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.65rem);
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+    .principles { border-top: 1px solid rgba(255,255,255,.18); }
+    .principle {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+    .principle span { color: var(--gold-soft); font-family: var(--serif); }
+    .principle strong { display: block; margin-bottom: .25rem; font-family: var(--serif); font-size: 1.25rem; font-weight: 400; }
+    .principle p { margin: 0; color: rgba(255,255,255,.65); font-size: .9rem; }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::after {
+      content: "DC";
+      position: absolute;
+      right: -1rem;
+      bottom: -6rem;
+      z-index: -1;
+      color: rgba(21,43,50,.035);
+      font-family: var(--serif);
+      font-size: clamp(14rem, 36vw, 35rem);
+      line-height: 1;
+      letter-spacing: -.12em;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 8vw, 8rem);
+      align-items: end;
+    }
+    .contact p { max-width: 580px; color: var(--muted); }
+    .contact-panel {
+      padding: 2rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+    }
+    .contact-panel h3 { margin: 0 0 .75rem; font-size: 1.65rem; }
+    .contact-panel p { margin: 0; }
+    .draft-label {
+      display: inline-block;
+      margin-top: 1.3rem;
+      padding: .45rem .65rem;
+      background: var(--paper);
+      color: var(--muted);
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 2rem 0;
+      background: var(--ink-deep);
+      color: rgba(255,255,255,.62);
+      font-size: .78rem;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    footer strong { color: white; font-family: var(--serif); font-size: 1rem; font-weight: 400; }
+
+    .menu-button {
+      display: none;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.28);
+      background: transparent;
+      color: white;
+      font: inherit;
+    }
+
+    @media (max-width: 820px) {
+      .shell { width: min(100% - 2rem, 680px); }
+      .nav { min-height: 78px; }
+      .menu-button { display: grid; place-items: center; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 1rem;
+        right: 1rem;
+        padding: 1.2rem;
+        background: var(--ink-deep);
+        border: 1px solid rgba(255,255,255,.18);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+      nav.open { display: flex; }
+      nav a { padding: .9rem; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        min-height: 760px;
+        padding-top: 140px;
+      }
+      .hero-note { align-self: auto; }
+      .hero::before { right: -230px; }
+      .intro, .method-grid, .contact-grid { grid-template-columns: 1fr; }
+      .services-head { display: grid; }
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: 250px; }
+    }
+
+    @media (max-width: 520px) {
+      .brand-text span { display: none; }
+      h1 { font-size: clamp(3.1rem, 16vw, 4.6rem); }
+      .section { padding: 4.5rem 0; }
+      .cta-row { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .text-link { padding: .7rem 0; text-align: center; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="#inizio" aria-label="Studio Legale Di Cola, torna all’inizio">
+        <span class="monogram" aria-hidden="true">DC</span>
+        <span class="brand-text">
+          <strong>Studio Legale Di Cola</strong>
+          <span>Avv. Monica Di Cola</span>
+        </span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri il menu">☰</button>
+      <nav id="main-nav" aria-label="Navigazione principale">
+        <a href="#studio">Lo studio</a>
+        <a href="#attivita">Attività</a>
+        <a href="#metodo">Metodo</a>
+        <a class="nav-contact" href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <section class="hero" id="inizio">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Diritto civile</p>
+          <h1>Competenza,<br><em>ascolto</em> e chiarezza.</h1>
+          <p class="hero-lead">L’Avv. Monica Di Cola offre consulenza e assistenza in materia civile, costruendo ogni percorso a partire dalla comprensione concreta della persona e della sua situazione.</p>
+          <div class="cta-row">
+            <a class="button" href="#attivita">Scopri le attività <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#contatti">Informazioni e contatti</a>
+          </div>
+        </div>
+        <aside class="hero-note">
+          <strong>Ogni questione ha una storia.</strong>
+          Prima di indicare una strada, è necessario comprenderla con precisione.
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="studio">
+      <div class="shell intro">
+        <div>
+          <p class="section-number">01 · Lo studio</p>
+          <h2>La tutela comincia dalla comprensione.</h2>
+        </div>
+        <div class="intro-copy">
+          <p>Il diritto non è fatto soltanto di norme. È fatto di persone, relazioni, responsabilità e decisioni che incidono sulla vita quotidiana.</p>
+          <p>Lo Studio Legale Di Cola affronta ogni incarico con attenzione al contesto, linguaggio comprensibile e valutazioni trasparenti. L’obiettivo è offrire al cliente gli elementi necessari per scegliere con consapevolezza il percorso più adatto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="attivita">
+      <div class="shell">
+        <div class="services-head">
+          <div>
+            <p class="section-number">02 · Attività</p>
+            <h2>Assistenza in materia civile.</h2>
+          </div>
+          <p>Dalla prima valutazione alla gestione della controversia, ogni fase viene affrontata con metodo e comunicazione chiara.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-index">01</span>
+            <h3>Consulenza legale</h3>
+            <p>Analisi della situazione, ricostruzione dei fatti e valutazione delle possibili soluzioni sul piano giuridico.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">02</span>
+            <h3>Assistenza stragiudiziale</h3>
+            <p>Gestione dei rapporti e delle trattative con l’obiettivo di tutelare gli interessi del cliente anche fuori dal giudizio.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">03</span>
+            <h3>Contenzioso civile</h3>
+            <p>Assistenza nelle controversie civili, con una strategia costruita sui fatti, sulle priorità e sugli obiettivi del cliente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method" id="metodo">
+      <div class="shell method-grid">
+        <div>
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>Una scelta consapevole nasce da parole chiare.</blockquote>
+        </div>
+        <div class="principles">
+          <div class="principle">
+            <span>01</span>
+            <div><strong>Ascolto</strong><p>Comprendere i fatti, il contesto e ciò che per il cliente conta davvero.</p></div>
+          </div>
+          <div class="principle">
+            <span>02</span>
+            <div><strong>Chiarezza</strong><p>Spiegare possibilità, limiti e passaggi con un linguaggio accessibile.</p></div>
+          </div>
+          <div class="principle">
+            <span>03</span>
+            <div><strong>Rigore</strong><p>Studiare ogni questione con attenzione e impostare una strategia coerente.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contatti">
+      <div class="shell contact-grid">
+        <div>
+          <p class="section-number">03 · Contatti</p>
+          <h2>Parliamo della tua situazione.</h2>
+          <p>Un primo confronto permette di mettere a fuoco la questione e capire quali passi valutare.</p>
+        </div>
+        <aside class="contact-panel">
+          <h3>Studio Legale Di Cola</h3>
+          <p>Avv. Monica Di Cola<br>Avvocata civilista</p>
+          <span class="draft-label">Recapiti e sede da inserire</span>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-row">
+      <strong>Studio Legale Di Cola</strong>
+      <span>© <span id="year"></span> · Dati professionali e informativa da completare</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navigation = document.querySelector('nav');
+    menuButton?.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.textContent = isOpen ? '×' : '☰';
+    });
+    navigation?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('open');
+        menuButton?.setAttribute('aria-expanded', 'false');
+        if (menuButton) menuButton.textContent = '☰';
+      });
+    });
+    document.getElementById('year').textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>
