@@ -333,17 +333,29 @@
       background: rgba(255,255,255,.7);
     }
     .contact-panel h3 { margin: 0 0 .75rem; font-size: 1.65rem; }
-    .contact-panel p { margin: 0; }
-    .draft-label {
-      display: inline-block;
-      margin-top: 1.3rem;
-      padding: .45rem .65rem;
-      background: var(--paper);
+    .contact-panel > p { margin: 0; }
+    .contact-details {
+      display: grid;
+      gap: 1rem;
+      margin: 1.5rem 0 0;
+      padding: 1.5rem 0 0;
+      border-top: 1px solid var(--line);
+    }
+    .contact-details div { display: grid; gap: .2rem; }
+    .contact-details dt {
       color: var(--muted);
-      font-size: .7rem;
-      letter-spacing: .12em;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
+    .contact-details dd { margin: 0; line-height: 1.55; }
+    .contact-details a {
+      color: var(--ink);
+      text-decoration-color: var(--gold);
+      text-underline-offset: .22em;
+    }
+    .contact-details a:hover { color: var(--gold-deep); }
 
     footer {
       padding: 2rem 0;
@@ -533,8 +545,33 @@
         </div>
         <aside class="contact-panel">
           <h3>Studio Legale Di Cola</h3>
-          <p>Avv. Monica Di Cola<br>Avvocata civilista</p>
-          <span class="draft-label">Recapiti e sede da inserire</span>
+          <p>Avv. Monica Di Cola<br>Avvocata civilista · Foro di Roma</p>
+          <dl class="contact-details">
+            <div>
+              <dt>Sede</dt>
+              <dd>Viale Liegi 58<br>00198 Roma (RM)</dd>
+            </div>
+            <div>
+              <dt>Telefono</dt>
+              <dd><a href="tel:+39068548279">06 854 8279</a></dd>
+            </div>
+            <div>
+              <dt>Fax</dt>
+              <dd>06 565 62513</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:monicadicola@gmail.com">monicadicola@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>PEC</dt>
+              <dd><a href="mailto:monicadicola@ordineavvocatiroma.org">monicadicola@ordineavvocatiroma.org</a></dd>
+            </div>
+            <div>
+              <dt>Iscrizione all’Albo</dt>
+              <dd>Ordine degli Avvocati di Roma · 13 luglio 2011</dd>
+            </div>
+          </dl>
         </aside>
       </div>
     </section>
@@ -543,7 +580,7 @@
   <footer>
     <div class="shell footer-row">
       <strong>Studio Legale Di Cola</strong>
-      <span>© <span id="year"></span> · Dati professionali e informativa da completare</span>
+      <span>© <span id="year"></span> · Avv. Monica Di Cola · Foro di Roma</span>
     </div>
   </footer>
 
@@ -566,3 +603,4 @@
   </script>
 </body>
 </html>
+
